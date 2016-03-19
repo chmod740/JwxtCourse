@@ -20,6 +20,7 @@ public class HttpRequester {
 
 	public HttpRequester() {
 		this.defaultContentEncoding = Charset.defaultCharset().name();
+		//this.defaultContentEncoding = "gbk";
 	}
 
 	/**
@@ -178,7 +179,7 @@ public class HttpRequester {
 		try {
 			InputStream in = urlConnection.getInputStream();
 			BufferedReader bufferedReader = new BufferedReader(
-					new InputStreamReader(in));
+					new InputStreamReader(in,"gbk"));
 			httpResponser.contentCollection = new Vector<String>();
 			StringBuffer temp = new StringBuffer();
 			String line = bufferedReader.readLine();
